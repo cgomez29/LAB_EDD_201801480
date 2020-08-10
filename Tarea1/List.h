@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Nodo.h"
-
+  
 typedef struct List
 {
     Nodo* head;
@@ -12,8 +12,8 @@ typedef struct List
 List* newList();
 void add(List* list, Nodo* nuevo);
 void imprimir(List* list);
-void delete_nodo(int index);
-void get(int index);
+void delete_nodo(List* list, int index);
+void get(List* list, int index);
 void generar(List* list);
 
 void liberar(List* list);

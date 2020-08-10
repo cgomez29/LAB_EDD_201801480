@@ -1,37 +1,30 @@
 #include "List.h"
 
-void add(List* list, Nodo* nuevo)
-{
-    if(list->head == NULL)
-    {
+    void add(List* list,Nodo* nuevo){
+    if(list->head == NULL){
         list->head = nuevo;
-    } else if (nuevo->val <= list->head->val)
-    {
+    }else if(nuevo->val <= list->head->val){
         nuevo->rigth = list->head;
         list->head->left = nuevo;
         list->head = nuevo;
-    } else
-    {
+    }else{
         Nodo* aux = list->head;
-        while(aux->val > nuevo->val)
-        {
-            if (aux->val > nuevo->val)
-            {
-                Nodo* ant = aux->left;
-                ant->rigth = nuevo;
-                nuevo->left = ant;
-                nuevo->rigth = aux;
-                aux -> left = nuevo;
-                return;
-            } else if(nuevo->val <= aux->rigth->val)
-            {
-                Nodo *siguiente = aux->rigth;
-                aux->rigth = nuevo;
-                nuevo->rigth = aux;
-                nuevo->rigth = siguiente;
-                siguiente->left = nuevo;
-                return;                
-            }
+        while(aux->rigth != NULL){
+            if(aux->val > nuevo->val){
+                    Nodo* ant = aux->left;
+                    ant->rigth = nuevo;
+                    nuevo->left = ant;
+                    nuevo->rigth = aux;
+                    aux->left = nuevo;
+                    return;
+                }else if(nuevo->val <= aux->rigth->val){
+                    Nodo *siguiente = aux->rigth;
+                    aux->rigth = nuevo;
+                    nuevo->rigth = aux;
+                    nuevo->rigth = siguiente;
+                    siguiente->left = nuevo;
+                    return;
+                }
             aux = aux->rigth;
         }
         aux->rigth = nuevo;
@@ -42,7 +35,6 @@ void add(List* list, Nodo* nuevo)
 void delete_nodo(List* list, int index)
 {
     Nodo* aux = list->head;
-    Nodo* ant;
     int contador = 0;
     if (aux == NULL)
     {
@@ -50,22 +42,33 @@ void delete_nodo(List* list, int index)
     }
     while (aux != NULL)
     {
+
         if (contador == index)
-        {
-            if(contador == 0)
+        {            
+            if (aux->rigth == NULL && aux->left == NULL)
             {
                 list->head = NULL;
-            } else {
-                ant->rigth = aux->rigth;           
-                aux->rigth = ant;
+                break;
+            } else if(aux->rigth == NULL)
+            {
+                aux->left->rigth = NULL;
+                break;
+            } else if (aux->rigth != NULL && aux->left == NULL)
+            {
+                list->head = aux->rigth;
+                break;
             }
-               
+            else 
+            {
+                aux->left->rigth = aux->rigth;
+                aux->rigth->left = aux->left;
+                break;
+            }
         }
-        ant = aux;
+        contador++;
         aux = aux->rigth;
     }
     
-
 }
 
 void get(List* list, int index)
@@ -87,7 +90,7 @@ void get(List* list, int index)
 }
 
 
-void Liberar(List* list)
+void liberar(List* list)
 {
     Nodo* aux = list->head;
     Nodo* temp;
@@ -99,20 +102,25 @@ void Liberar(List* list)
     }
 }
 
-void imprimir(List* l){
-    Nodo* aux=l->head;
+void imprimir(List* list){
+    Nodo* aux=list->head;
+    if (aux == NULL)
+    {
+        printf("No hay valores en la Lista");
+    }
     while(aux!=NULL){
         printf("El valor es %i \n",aux->val);
         aux=aux->rigth;
     }
 }
+
 List* newList(){
     List* nueva=(List*) malloc(sizeof(List));
     nueva->head=NULL;
     return nueva;
 }
 
-void generar(List* l){
+/*void generar(List* l){
     FILE * fp;
     fp=fopen("./cadigo.txt","w");
     if(fp==NULL){
@@ -135,7 +143,6 @@ void guardarRecursivo(Nodo* aux,FILE* fp,char c[]){
         return;
     }else{
         if(aux->rigth!=NULL){
-            
             sprintf(c,"node%p[label=\"%i\"]\n",&(*aux),aux->val);
             fputs(c,fp);
             guardarRecursivo(aux->rigth,fp,c);
@@ -146,4 +153,4 @@ void guardarRecursivo(Nodo* aux,FILE* fp,char c[]){
             fputs(c,fp);
         }
     }
-}
+}*/
