@@ -120,7 +120,7 @@ List* newList(){
     return nueva;
 }
 
-/*void generar(List* l){
+void generar(List* l){
     FILE * fp;
     fp=fopen("./cadigo.txt","w");
     if(fp==NULL){
@@ -130,8 +130,7 @@ List* newList(){
     char cad[1024];
     sprintf(cad,"digraph G{ \n node[shape=\"box\"];\n");
     fputs(cad,fp);
-    Nodo* aux;
-    aux=l->head;
+    Nodo* aux=l->head;
     guardarRecursivo(aux,fp,cad);
     sprintf(cad,"}\n");
     fputs(cad,fp);
@@ -143,14 +142,15 @@ void guardarRecursivo(Nodo* aux,FILE* fp,char c[]){
         return;
     }else{
         if(aux->rigth!=NULL){
-            sprintf(c,"node%p[label=\"%i\"]\n",&(*aux),aux->val);
+            sprintf(c,"node%p[label=\"%i\",color=\"red\"]\n",&(*aux),aux->val);
             fputs(c,fp);
             guardarRecursivo(aux->rigth,fp,c);
-            sprintf(c,"node%p->node%p;\n node%p->node%p;\n",&(*aux),&(*aux->rigth),&(*aux->rigth),&(*aux));
+            sprintf(c,"node%p->node%p[color=\"green\"];\n node%p->node%p[color=\"green\"];\n",&(*aux),
+                &(*aux->rigth),&(*aux->rigth),&(*aux));
             fputs(c,fp);
         }else{
-            sprintf(c,"node%p[label=\"%i\"]\n",&(*aux),aux->val);
+            sprintf(c,"node%p[label=\"%i\", color=\"red\"]\n",&(*aux),aux->val);
             fputs(c,fp);
         }
     }
-}*/
+}

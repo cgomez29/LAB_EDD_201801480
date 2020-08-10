@@ -15,5 +15,5 @@ void imprimir(List* list);
 void delete_nodo(List* list, int index);
 void get(List* list, int index);
 void generar(List* list);
-
 void liberar(List* list);
+void guardarRecursivo(Nodo* aux, FILE* fp, char c[]);

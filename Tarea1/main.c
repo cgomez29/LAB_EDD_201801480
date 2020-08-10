@@ -25,6 +25,7 @@ int main()
     //get(list, 1);
     delete_nodo(list, 0);
     imprimir(list);
+    generar(list);
     liberar(list);
     free(list);
     return 0;
