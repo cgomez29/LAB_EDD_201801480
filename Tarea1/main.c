@@ -23,7 +23,11 @@ int main()
     add(list, f);
     add(list, g);
     //get(list, 1);
+    imprimir(list);
+    printf("\n");
     delete_nodo(list, 0);
+    delete_nodo(list,2);
+    delete_nodo(list,4);
     imprimir(list);
     generar(list);
     liberar(list);

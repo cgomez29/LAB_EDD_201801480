@@ -1,0 +1,11 @@
+----------------------Errores---------------
+1) El metodo esta bien implementado pero cuando borras un nodo no le das free(nodo)
+y si no haces eso nunca le dices a la memoria que tiene libre esa posicion por lo cual los
+objetos no se eliminan solo rompes el enlace
+
+----------------------Recomendaciones------
+----------------------Nota----------------
+Grafica 20/20
+Eliminar 30/40
+Get 40/40
+Total 90

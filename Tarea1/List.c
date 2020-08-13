@@ -20,7 +20,7 @@
                 }else if(nuevo->val <= aux->rigth->val){
                     Nodo *siguiente = aux->rigth;
                     aux->rigth = nuevo;
-                    nuevo->rigth = aux;
+                    nuevo->left = aux;
                     nuevo->rigth = siguiente;
                     siguiente->left = nuevo;
                     return;
