@@ -1,8 +1,11 @@
+#pragma once
 #include <iostream>
 #include "Student.h"
+
+using namespace std;
+
 class Nodo
 {
-
 private:
     Nodo* rigth;
     Nodo* left;
@@ -10,12 +13,9 @@ private:
 
 public:
     Nodo(Student student);
-    ~Nodo();
     void setRigth(Nodo* rigth);
     Nodo* getRigth();
     void setLeft(Nodo* left);
     Nodo* getLeft();
-    Student getStudent()
-
-
+    Student getStudent();
 };

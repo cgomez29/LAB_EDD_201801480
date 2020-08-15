@@ -68,6 +68,8 @@ void delete_nodo(List* list, int index)
         contador++;
         aux = aux->rigth;
     }
+
+    free(aux);
     
 }
 

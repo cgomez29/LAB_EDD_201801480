@@ -4,10 +4,10 @@ using namespace std;
 
 class Student
 {
-    private:
-        int idStudent; //carnet
-        string name;
-    public:
+private:
+    int idStudent; //carnet
+    string name;
+public:
 	Student();
 	Student(int idStudent, string name);
 	~Student();

@@ -1,16 +1,24 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
 #include "Nodo.h"
+
+using namespace std;
 
 class List
 {
-private:
-    Nodo* head;
-
 public:
-    void setHead();
-    Nodo* getHead();
+    List();
+    ~List();
+    
     void add(int idStudent, string name);
     void delete_nodo(int idStudent);
     void get(int idStudent);
     void print();
+    void graficar();
+
+private:
+    string graficar(Nodo* aux);
+    Nodo* head;
 };

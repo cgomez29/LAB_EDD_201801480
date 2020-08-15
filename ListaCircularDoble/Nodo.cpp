@@ -24,10 +24,10 @@ void Nodo::setLeft(Nodo* left)
 
 Nodo* Nodo::getLeft()
 {
-    return this->left;
+    return this-> left;
 }
 
 Student Nodo::getStudent()
-{   
+{
     return this->student;
 }

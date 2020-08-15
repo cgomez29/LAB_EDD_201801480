@@ -1,0 +1,20 @@
+digraph G {
+node[shape="record"];
+rankdir=LR;
+nodo0x6c6480[label="201801480"];
+nodo0x6c64c0->nodo0x6c6480[color="green"];
+nodo0x6c6480->nodo0x6c64c0[color="green"];
+
+nodo0x6c64c0[label="201801481"];
+nodo0x6c6500->nodo0x6c64c0[color="green"];
+nodo0x6c64c0->nodo0x6c6500[color="green"];
+
+nodo0x6c6500[label="201801482"];
+nodo0x6c6540->nodo0x6c6500[color="green"];
+nodo0x6c6500->nodo0x6c6540[color="green"];
+
+nodo0x6c6540[label="201801482"];
+nodo0x6c6480->nodo0x6c6540[color="green"];
+nodo0x6c6540->nodo0x6c6480[color="green"];
+
+}
