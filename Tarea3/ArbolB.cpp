@@ -10,6 +10,11 @@ ArbolB::~ArbolB()
 	Delete(this->raiz);
 }
 
+void ArbolB::Delete()
+{
+	Delete(this->raiz);
+}
+
 void ArbolB::Delete(NodoB* raiz)
 {
 	if (this->raiz) { return; }

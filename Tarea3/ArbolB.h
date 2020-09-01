@@ -16,6 +16,7 @@ private:
 	void preOrden(NodoB* nodo);
 	void inOrden(NodoB* nodo);
 	void postOrden(NodoB* nodo);
+	void Delete(NodoB* raiz);
 
 public:
 	ArbolB();
@@ -26,8 +27,7 @@ public:
 	void inOrden();
 	void postOrden();
 	void delete_nodo(int valor);
-	void Delete(NodoB* raiz);
-
+	void Delete();
 	
 };
 #endif // ARBOLB_H

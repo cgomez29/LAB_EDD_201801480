@@ -1,0 +1,7 @@
+﻿  Burbuja.cpp
+C:\6 semestre\EDD\Laboratorio_EDD_201801480\Tarea4\Burbuja.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\6 semestre\EDD\Laboratorio_EDD_201801480\Tarea4\Burbuja.cpp(8,20): warning C4018: '<=': no coinciden signed/unsigned
+  Tarea4.cpp
+C:\6 semestre\EDD\Laboratorio_EDD_201801480\Tarea4\Burbuja.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Generando código...
+  Tarea4.vcxproj -> C:\6 semestre\EDD\Laboratorio_EDD_201801480\Tarea4\Debug\Tarea4.exe

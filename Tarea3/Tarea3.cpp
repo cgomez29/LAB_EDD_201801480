@@ -17,7 +17,7 @@ int main()
     arbol->inOrden();
     cout << " " << endl;
     arbol->postOrden();
-
+    arbol->Delete();
     delete arbol;
     return 0;
 }
