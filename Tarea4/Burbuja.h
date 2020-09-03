@@ -1,6 +1,6 @@
 #ifndef BURBUJA_H
 #define BURBUJA_H
-#include <iostream>|
+#include <iostream>
 
 using namespace std;
 
